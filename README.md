@@ -10,7 +10,7 @@ To use this function, all that is required is to update the aws-em.py file with 
 
 A diagram of the architecture of this system can be seen below:
 
-(Serverless%20Message%20Transformation%20and%20Delivery%20-%20Page%201.png "AWS EM Serverless Mailer")
+(AWS-EM Serverless Function.png "AWS EM Serverless Mailer")
 
 ## Email Message
 
