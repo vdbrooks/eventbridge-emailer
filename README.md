@@ -10,14 +10,14 @@ To use this function, all that is required is to update the aws-em.py file with 
 
 A diagram of the architecture of this system can be seen below:
 
-(https://github.com/AHEAD-Labs/lambda-library/blob/develop/aws-em/Serverless%20Message%20Transformation%20and%20Delivery%20-%20Page%201.png "AWS EM Serverless Mailer")
+(Serverless%20Message%20Transformation%20and%20Delivery%20-%20Page%201.png "AWS EM Serverless Mailer")
 
 ## Email Message
 
 Right now, the email message uses a simple free template, which we import in Python, and template using the jinja2 template library. At the moment, this is simply
 a simple black and white template that displays the template properties for the user. This template will likely change, and we aren't set in stone on the colors or columns, etc.
 
-![alt text](https://github.com/AHEAD-Labs/lambda-library/blob/develop/aws-em/email-example.png "Example User Email")
+![alt text](email-example.png "Example User Email")
 ## Support for Various Events
 
 
