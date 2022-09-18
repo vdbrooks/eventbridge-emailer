@@ -10,6 +10,7 @@ import json
 import logging
 import sys
 import uuid as id
+import os
 
 # Set up logging
 logging.basicConfig(format='%(levelname)s:%(asctime)s %(message)s',
@@ -17,9 +18,18 @@ logging.basicConfig(format='%(levelname)s:%(asctime)s %(message)s',
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+#Grab variables from environment
+to_email = os.getenv('TO_EMAIL')
+from_email = os.getenv('FROM_EMAIL')
+
 
 def lambda_handler(event, context):
+
     # Attempt to locate each of the user properties
+
+    #Grab variables from environment
+    #to_email = os.getenv['TO_EMAIL']
+    #from_email = os.getenv['FROM_EMAIL']
 
     try:
         user_arn = event['userIdentity']['arn']
@@ -79,8 +89,8 @@ def lambda_handler(event, context):
     html = email.make_html('simple.html', event)
     tbuilder = BuildTable(event)
     tbuilder.build()
-    send = SendEmail(to='user@domain.tld', subject=email_subject, html=html)
-    send.send(from_addr='user@domain.tld')
+    send = SendEmail(to=to_email, subject=email_subject, html=html)
+    send.send(from_addr=from_email)
 
 
 if __name__ == '__main__':
