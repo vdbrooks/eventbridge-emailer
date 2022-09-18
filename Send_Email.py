@@ -34,3 +34,4 @@ class SendEmail(object):
             Source=self.from_addr,
             Destination=destination,
             Message=self.message)
+        return response
