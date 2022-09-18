@@ -35,6 +35,7 @@ def lambda_handler(event, context):
         try:
             user_arn = event['detail']['userIdentity']['arn']
         except KeyError as e:
+            logging.error('Trying last attempt to get userIdentity: {0} '.format(e))
             user_arn = event['userIdentity']['invokedBy']
 
     try:
