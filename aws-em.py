@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-from Send_Email import Send_Email
-from Create_Email import Create_Email
-from Build_Table import Build_Table
+from Send_Email import SendEmail
+from Create_Email import CreateEmail
+from Build_Table import BuildTable
 
 import datetime
 import json
@@ -87,11 +87,11 @@ def lambda_handler(event, context):
         '-' +
         custom_event['account_id'])
 
-    email = Create_Email(event, custom_event)
+    email = CreateEmail(event, custom_event)
     html = email.make_html('simple.html', event)
-    tbuilder = Build_Table(event)
+    tbuilder = BuildTable(event)
     tbuilder.build()
-    send = Send_Email(to=to_email, subject=email_subject, html=html)
+    send = SendEmail(to=to_email, subject=email_subject, html=html)
     send.send(from_addr=from_email)
 
 
