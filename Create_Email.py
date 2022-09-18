@@ -1,7 +1,7 @@
 from jinja2 import Environment, PackageLoader
 
 # Loads templates from the yourapp.templates folder
-env = Environment(loader=PackageLoader('emailer', 'templates'))
+env = Environment(loader=PackageLoader('emailer', 'templates'), autoescape=True)
 
 
 class CreateEmail(object):
