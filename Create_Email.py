@@ -4,7 +4,7 @@ from jinja2 import Environment, PackageLoader
 env = Environment(loader=PackageLoader('emailer', 'templates'))
 
 
-class CreateEmail(object):
+class Create_Email(object):
     def __init__(self, event, custom_event):
         self.event = event
         self.custom_event = custom_event

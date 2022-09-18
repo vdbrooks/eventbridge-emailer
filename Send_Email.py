@@ -1,7 +1,7 @@
 import boto3
 
 
-class SendEmail(object):
+class Send_Email(object):
     def __init__(self, to, subject, html):
         self.to = to
         self.subject = subject

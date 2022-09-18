@@ -3,7 +3,7 @@ from json2table import convert
 # Loads templates from the yourapp.templates folder
 
 
-class BuildTable(object):
+class Build_Table(object):
     def __init__(self, event):
         self.event = event
         self.build_direction = "TOP_TO_BOTTOM"
