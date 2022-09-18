@@ -19,6 +19,8 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 #Grab variables from environment
+#The sender and receiver need to be authorized
+#In AWS SES
 to_email = os.getenv('TO_EMAIL')
 from_email = os.getenv('FROM_EMAIL')
 
