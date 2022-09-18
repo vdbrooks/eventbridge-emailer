@@ -2,9 +2,9 @@
 
 This function transforms JSON Events from CloudWatch Events, CloudWatch Logs Metric Filters, and other (future) events into friendly HTML emails for end users:
 
-* Pulls identity information and event information and displays in an easy to read format
-* Transforms full JSON event into HTML table for simpler navigation (when reading the full event details)
-* Python 2.7/Boto3
+*  Pulls identity information and event information and displays in an easy to read format
+*  Transforms full JSON event into HTML table for simpler navigation (when reading the full event details)
+*  Python 2.7/Boto3
 
 To use this function, all that is required is to update the aws-em.py file with the distribution address where emails should be delivered. As a feature request, a confirm file may be created for customization--these details may also be handled at deploy time (terraform/cloudformation).  
 
