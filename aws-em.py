@@ -18,9 +18,9 @@ logging.basicConfig(format='%(levelname)s:%(asctime)s %(message)s',
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-#Grab variables from environment
-#The sender and receiver need to be authorized
-#In AWS SES
+# Grab variables from environment
+# The sender and receiver need to be authorized
+# In AWS SES
 to_email = os.getenv('TO_EMAIL')
 from_email = os.getenv('FROM_EMAIL')
 
@@ -29,7 +29,7 @@ def lambda_handler(event, context):
 
     # Attempt to locate each of the user properties
 
-    #Grab variables from environment
+    # Grab variables from environment
     #to_email = os.getenv['TO_EMAIL']
     #from_email = os.getenv['FROM_EMAIL']
 
