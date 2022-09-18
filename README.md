@@ -1,4 +1,4 @@
-## AWS Event Manager 
+# AWS Event Manager
 
 This function transforms JSON Events from CloudWatch Events, CloudWatch Logs Metric Filters, and other (future) events into friendly HTML emails for end users:
 
@@ -18,8 +18,7 @@ Right now, the email message uses a simple free template, which we import in Pyt
 a simple black and white template that displays the template properties for the user. This template will likely change, and we aren't set in stone on the colors or columns, etc.
 
 ![alt text](email-example.png "Example User Email")
+
 ## Support for Various Events
 
-
 **Important** This function supports thousands of events, due to the fact that most events use a few event message schemas. However, it is outside of our control to enforce consistency on event schemas, and so if event messages deviate from that standard, and if the function has not been updated to account for that structure, the full message details are transformed into an HTML table, instead of the select properties.
-
