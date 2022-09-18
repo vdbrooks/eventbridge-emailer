@@ -5,11 +5,7 @@ from Send_Email import SendEmail
 from Create_Email import CreateEmail
 from Build_Table import BuildTable
 
-import datetime
-import json
 import logging
-import sys
-import uuid as id
 import os
 
 # Set up logging
