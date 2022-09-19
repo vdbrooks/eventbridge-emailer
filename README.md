@@ -21,4 +21,4 @@ a simple black and white template that displays the template properties for the 
 
 ## Support for Various Events
 
-**Important** This function supports thousands of events, due to the fact that most events use a few event message schemas. However, it is outside of our control to enforce consistency on event schemas, and so if event messages deviate from that standard, and if the function has not been updated to account for that structure, the full message details are transformed into an HTML table, instead of the select properties.
+**Important** This function supports thousands of events, due to the fact that most events use a few event message schemas. However, it is outside of our control to enforce consistency on event schemas, and so if event messages deviate from that standard, and if the function has not been updated to account for that structure, the full message details are transformed into an HTML table, instead of the select properties..
