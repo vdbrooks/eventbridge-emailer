@@ -17,7 +17,7 @@ A diagram of the architecture of this system can be seen below:
 Right now, the email message uses a simple free template, which we import in Python, and template using the jinja2 template library. At the moment, this is simply
 a simple black and white template that displays the template properties for the user. This template will likely change, and we aren't set in stone on the colors or columns, etc.
 
-![alt text](email-example.png "Example User Email")
+![alt text](email-examples.png "Example User Email")
 
 ## Support for Various Events
 
