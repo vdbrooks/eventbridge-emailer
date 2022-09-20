@@ -4,6 +4,7 @@ from __future__ import print_function
 from Send_Email import SendEmail
 from Create_Email import CreateEmail
 from Build_Table import BuildTable
+from Event_Parser import EventParser
 
 import logging
 import os
@@ -29,53 +30,17 @@ def lambda_handler(event, context):
     #to_email = os.getenv['TO_EMAIL']
     #from_email = os.getenv['FROM_EMAIL']
 
-    try:
-        user_arn = event['userIdentity']['arn']
-    except KeyError as e:
-        try:
-            user_arn = event['detail']['userIdentity']['arn']
-        except KeyError as e:
-            logging.error('Trying last attempt to get userIdentity: {0} '.format(e))
-            user_arn = event['userIdentity']['invokedBy']
-
-    try:
-        account_id = event['userIdentity']['accountId']
-    except KeyError as e:
-        try:
-            account_id = event['detail']['userIdentity']['accountId']
-        except KeyError as e:
-            account_id = event['recipientAccountId']
-
-    try:
-        sourceIPAddress = event['sourceIPAddress']
-    except KeyError as e:
-        sourceIPAddress = event['detail']['sourceIPAddress']
-
-    # Attempt to locate each of the event  properties
-
-    try:
-        event_name = event['eventName']
-    except KeyError as e:
-        event_name = event['detail']['eventName']
-
-    try:
-        event_time = event['eventTime']
-    except KeyError as e:
-        event_time = event['detail']['eventTime']
-
-    try:
-        event_type = event['eventType']
-    except KeyError as e:
-        event_type = event['detail']['eventType']
+    parser = EventParser(event)
+    parsed_event = parser._parse()
 
     # Build custom event object
     custom_event = {
-        "user_arn": user_arn,
-        "account_id": account_id,
-        "sourceIPAddress": sourceIPAddress,
-        "event_name": event_name,
-        "event_time": event_time,
-        "event_type": event_type}
+        "user_arn": parsed_event['user_arn'],
+        "account_id": parsed_event['account_id'],
+        "sourceIPAddress": parsed_event['sourceIPAddress'],
+        "event_name": parsed_event['event_name'],
+        "event_time": parsed_event['event_time'],
+        "event_type": parsed_event['event_type']}
 
     # Build email subject
     email_subject = str(
