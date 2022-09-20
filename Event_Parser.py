@@ -63,5 +63,5 @@ class EventParser(object):
         except KeyError as e:
             event_type = self.event['detail']['eventType']
             self.parsed_event['event_type'] = event_type
-        
+
         return self.parsed_event
