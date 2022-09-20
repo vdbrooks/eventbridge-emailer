@@ -27,4 +27,4 @@ Future Improvements
 
 * Add Terraform module for deploying the solution, SES, Lambda function, and related resources. 
 * A version of this could, of course, be made using SNS as the delivery mecchanism (w/email subscriber). This would be cheaper, but loses the ability to send HTML formatted emails. 
-
+* Support for sending emails via an outgoing SMTP server. This would be cheaper, since infrastructure is in use. An option for those that don't want to use SES, but also want HTML email support. 
