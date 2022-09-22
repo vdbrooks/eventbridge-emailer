@@ -64,5 +64,45 @@ def lambda_handler(event, context):
 
 if __name__ == '__main__':
     lambda_handler(
-           {"version":"0","id":"2be0546a-38fe-2b9c-2be9-56268b6bcb0b","detail-type":"AWS API Call via CloudTrail","source":"aws.iam","account":"123456789112","time":"2022-09-17T03:30:05Z","region":"us-east-1","resources":[],"detail":{"eventVersion":"1.08","userIdentity":{"type":"Root","principalId":"123456789112","arn":"arn:aws:iam::123456789112:root","accountId":"123456789112","accessKeyId":"ASIA4PVLGHWZMDDHBFGET","sessionContext":{"sessionIssuer":{},"webIdFederationData":{},"attributes":{"creationDate":"2022-09-17T02:21:37Z","mfaAuthenticated":"true"}}},"eventTime":"2022-09-17T03:30:05Z","eventSource":"iam.amazonaws.com","eventName":"AttachUserPolicy","awsRegion":"us-east-1","sourceIPAddress":"AWS Internal","userAgent":"AWS Internal","requestParameters":{"userName":"new_user","policyArn":"arn:aws:iam::aws:policy/AdministratorAccess"},"responseElements":"null","requestID":"4a949ee0-0511-41d3-ac1f-eaa39d6adee7","eventID":"0a9b1e24-8f9a-4fd6-90d9-ac2efa8ee53c","readOnly":"false","eventType":"AwsApiCall","managementEvent":"true","recipientAccountId":"1234567899112","eventCategory":"Management","sessionCredentialFromConsole":"true"}} ,
+        {
+            "version": "0",
+            "id": "2be0546a-38fe-2b9c-2be9-56268b6bcb0b",
+            "detail-type": "AWS API Call via CloudTrail",
+            "source": "aws.iam",
+            "account": "123456789112",
+            "time": "2022-09-17T03:30:05Z",
+            "region": "us-east-1",
+            "resources": [],
+            "detail": {
+                "eventVersion": "1.08",
+                "userIdentity": {
+                    "type": "Root",
+                    "principalId": "123456789112",
+                    "arn": "arn:aws:iam::123456789112:root",
+                    "accountId": "123456789112",
+                    "accessKeyId": "ASIA4PVLGHWZMDDHBFGET",
+                    "sessionContext": {
+                        "sessionIssuer": {},
+                        "webIdFederationData": {},
+                        "attributes": {
+                            "creationDate": "2022-09-17T02:21:37Z",
+                            "mfaAuthenticated": "true"}}},
+                "eventTime": "2022-09-17T03:30:05Z",
+                "eventSource": "iam.amazonaws.com",
+                "eventName": "AttachUserPolicy",
+                "awsRegion": "us-east-1",
+                "sourceIPAddress": "AWS Internal",
+                "userAgent": "AWS Internal",
+                        "requestParameters": {
+                            "userName": "new_user",
+                            "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess"},
+                "responseElements": "null",
+                "requestID": "4a949ee0-0511-41d3-ac1f-eaa39d6adee7",
+                "eventID": "0a9b1e24-8f9a-4fd6-90d9-ac2efa8ee53c",
+                "readOnly": "false",
+                            "eventType": "AwsApiCall",
+                            "managementEvent": "true",
+                            "recipientAccountId": "1234567899112",
+                            "eventCategory": "Management",
+                            "sessionCredentialFromConsole": "true"}},
         None)

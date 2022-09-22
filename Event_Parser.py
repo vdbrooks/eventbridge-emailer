@@ -11,26 +11,23 @@ logging.basicConfig(format='%(levelname)s:%(asctime)s %(message)s',
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+
 class EventParser(object):
     def __init__(self, event):
         self.event = event
         self.parsed_event = {}
 
-
-
     def get_event_values(self):
-        self.parsed_event['policy_user'] =  self.parse_policy_user()
+        self.parsed_event['policy_user'] = self.parse_policy_user()
         self.parsed_event['policy_arn'] = self.parse_policy_arn()
-        self.parsed_event['user_arn'] =  self.parse_user_arn()
-        self.parsed_event['account_id'] =  self.parse_account_id()
+        self.parsed_event['user_arn'] = self.parse_user_arn()
+        self.parsed_event['account_id'] = self.parse_account_id()
         self.parsed_event['sourceIPAddress'] = self.parse_source_ip()
         self.parsed_event['event_name'] = self.parse_event_name()
         self.parsed_event['event_time'] = self.parse_event_time()
         self.parsed_event['event_type'] = self.parse_event_type()
 
         return self.parsed_event
-
-
 
     def parse_policy_user(self):
         try:
@@ -45,7 +42,6 @@ class EventParser(object):
         except KeyError as e:
             logging.error("Couldn't find policy user or arn: {0}".format(e))
         return policy_arn
-    
 
     def parse_user_arn(self):
         try:
@@ -56,8 +52,8 @@ class EventParser(object):
             except KeyError as e:
                 user_arn = self.event['userIdentity']['invokedBy']
 
-        return  user_arn
-        
+        return user_arn
+
     def parse_account_id(self):
         try:
             account_id = self.event['userIdentity']['accountId']
@@ -80,7 +76,7 @@ class EventParser(object):
     def parse_event_name(self):
         try:
             event_name = self.event['eventName']
-            
+
         except KeyError as e:
             event_name = self.event['detail']['eventName']
             #self.parsed_event['event_name'] = event_name
