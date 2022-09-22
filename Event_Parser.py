@@ -27,7 +27,6 @@ class EventParser(object):
         self.parsed_event['event_name'] = self.parse_event_name()
         self.parsed_event['event_time'] = self.parse_event_time()
         self.parsed_event['event_type'] = self.parse_event_type()
-     
 
         return self.parsed_event
 
